@@ -1,0 +1,13 @@
+flask
+flask_restful
+Flask-Migrate
+flask_marshmallow
+flask-apispec
+flask-admin
+flask-cors
+flask-login
+flask-wtf
+flask-Bootstrap
+marshmallow-sqlalchemy
+psycopg2-binary
+pyjwt == 1.7.1

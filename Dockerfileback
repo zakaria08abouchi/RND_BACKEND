@@ -1,0 +1,9 @@
+FROM python:3.7
+COPY ./app /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+CMD export FLASK_APP=run.py
+CMD flask db init
+CMD flask db migrate
+CMD flask db upgrade
+CMD python run.py

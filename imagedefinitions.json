@@ -1,0 +1,6 @@
+[
+  {
+    "name": "rnd_election_api",
+    "imageUri": "056667086622.dkr.ecr.eu-west-3.amazonaws.com/rnd_election_api:latest"
+  }
+]

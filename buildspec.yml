@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update -y
+#     logging to amazone ECR region paris
+      - $(aws ecr get-login --no-include-email --region eu-west-3)
+#     logging to docker hub to avoid failing pulls
+      - docker login --username wissalgroup --password knasri@2021
+  build:
+    commands:
+      - docker build -t rnd_election_api .
+      - docker tag rnd_election_api:latest 056667086622.dkr.ecr.eu-west-3.amazonaws.com/rnd_election_api:latest
+
+  post_build:
+    commands:
+      - docker push 056667086622.dkr.ecr.eu-west-3.amazonaws.com/rnd_election_api:latest
+artifacts:
+  files:
+    - ./imagedefinitions.json
+    - ./hcmcockpit-addons
